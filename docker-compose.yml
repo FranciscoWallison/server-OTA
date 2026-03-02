@@ -1,0 +1,13 @@
+services:
+  server:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/workspace
+    environment:
+      - NODE_ENV=development
+      - HMAC_SECRET=dev-hmac-secret-change-in-production
+    command: bash -c "npm install && npm run dev"
+    stdin_open: true
+    tty: true
