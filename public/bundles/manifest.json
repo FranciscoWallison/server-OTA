@@ -1,5 +1,12 @@
 {
   "currentVersion": "1.0.0",
   "minVersion": "1.0.0",
-  "versions": []
+  "versions": [
+    {
+      "version": "1.0.0",
+      "sha256": "a7b5189d41c9a307227d0bda471a3962ad0e943d8863f967798fbfa5cbd1285c",
+      "size": 199054,
+      "createdAt": "2026-03-02T21:26:41.201Z"
+    }
+  ]
 }
