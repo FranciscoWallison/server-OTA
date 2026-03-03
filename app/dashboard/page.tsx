@@ -78,7 +78,7 @@ export default function DashboardPage() {
           border: '1px solid #e8e8e8',
         }}>
           <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', color: '#888', letterSpacing: '0.5px', marginBottom: '8px' }}>
-            Total Versions
+            Total de Versões
           </div>
           <div style={{ fontSize: '24px', fontWeight: 700, color: '#333' }}>
             {manifest.versions.length}
@@ -96,22 +96,22 @@ export default function DashboardPage() {
         marginBottom: '32px',
       }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, margin: '0 0 16px 0', color: '#1a1a2e' }}>
-          Published Versions
+          Versões Publicadas
         </h2>
 
         {manifest.versions.length === 0 ? (
           <p style={{ color: '#999', fontStyle: 'italic', margin: 0 }}>
-            No versions published yet. Deploy your first bundle to get started.
+            Nenhuma versão publicada ainda. Faça o deploy do seu primeiro bundle para começar.
           </p>
         ) : (
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '14px' }}>
               <thead>
                 <tr style={{ borderBottom: '2px solid #e8e8e8' }}>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Version</th>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Versão</th>
                   <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>SHA-256</th>
-                  <th style={{ textAlign: 'right', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Size</th>
-                  <th style={{ textAlign: 'right', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Date</th>
+                  <th style={{ textAlign: 'right', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Tamanho</th>
+                  <th style={{ textAlign: 'right', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Data</th>
                 </tr>
               </thead>
               <tbody>
@@ -137,7 +137,7 @@ export default function DashboardPage() {
                       {(entry.size / 1024).toFixed(1)} KB
                     </td>
                     <td style={{ padding: '12px 16px', textAlign: 'right', color: '#555' }}>
-                      {new Date(entry.createdAt).toLocaleDateString('en-US', {
+                      {new Date(entry.createdAt).toLocaleDateString('pt-BR', {
                         year: 'numeric',
                         month: 'short',
                         day: 'numeric',
@@ -160,12 +160,12 @@ export default function DashboardPage() {
         border: '1px solid #e8e8e8',
       }}>
         <h2 style={{ fontSize: '18px', fontWeight: 600, margin: '0 0 16px 0', color: '#1a1a2e' }}>
-          Recent Device Reports
+          Relatórios Recentes de Dispositivos
         </h2>
 
         {reports.length === 0 ? (
           <p style={{ color: '#999', fontStyle: 'italic', margin: 0 }}>
-            No device reports received yet. Reports appear here when devices check for updates.
+            Nenhum relatório de dispositivo recebido ainda. Os relatórios aparecem aqui quando os dispositivos verificam atualizações.
           </p>
         ) : (
           <div style={{ overflowX: 'auto' }}>
@@ -173,9 +173,9 @@ export default function DashboardPage() {
               <thead>
                 <tr style={{ borderBottom: '2px solid #e8e8e8' }}>
                   <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Status</th>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Version</th>
-                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Platform</th>
-                  <th style={{ textAlign: 'right', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Received</th>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Versão</th>
+                  <th style={{ textAlign: 'left', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Plataforma</th>
+                  <th style={{ textAlign: 'right', padding: '12px 16px', color: '#666', fontWeight: 600, fontSize: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Recebido</th>
                 </tr>
               </thead>
               <tbody>
@@ -208,7 +208,7 @@ export default function DashboardPage() {
                         {report.platform}
                       </td>
                       <td style={{ padding: '12px 16px', textAlign: 'right', color: '#555', fontSize: '13px' }}>
-                        {new Date(report.receivedAt).toLocaleString('en-US', {
+                        {new Date(report.receivedAt).toLocaleString('pt-BR', {
                           month: 'short',
                           day: 'numeric',
                           hour: '2-digit',
@@ -226,7 +226,7 @@ export default function DashboardPage() {
 
       {/* Footer */}
       <div style={{ textAlign: 'center', marginTop: '32px', fontSize: '12px', color: '#aaa' }}>
-        OTA Server &mdash; Next.js 15 + Vercel
+        Servidor OTA &mdash; Next.js 15 + Vercel
       </div>
     </div>
   );
