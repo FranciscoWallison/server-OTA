@@ -16,18 +16,18 @@ A comunicação entre o aplicativo móvel e este servidor foi desenhada com foco
 
 ```mermaid
 flowchart TD
-    Start([App abre]) --> CheckVersion["GET /api/version\nHeader: X-Current-Version: 1.0.0"]
+    Start([App abre]) --> CheckVersion["GET /api/version<br/>Header: X-Current-Version: 1.0.0"]
     CheckVersion --> Response[/"Resposta: version, sha256, hmac, forceUpdate"/]
 
-    Response --> ValidateHMAC{"Valida HMAC\nServidor Legítimo?"}
+    Response --> ValidateHMAC{"Valida HMAC<br/>Servidor Legítimo?"}
     ValidateHMAC -->|"Não"| AbortHMAC(["Cancela: Assinatura Inválida"])
-    ValidateHMAC -->|"Sim"| Download["GET /api/bundle/1.2.2\nRedireciona para .zip"]
+    ValidateHMAC -->|"Sim"| Download["GET /api/bundle/1.2.2<br/>Redireciona para .zip"]
 
-    Download --> VerifyHash{"Verifica sha256\nArquivo Íntegro?"}
+    Download --> VerifyHash{"Verifica sha256<br/>Arquivo Íntegro?"}
     VerifyHash -->|"Não"| AbortHash(["Descarta: Possível Corrupção/MITM"])
     VerifyHash -->|"Sim"| Extract["Aplica bundle localmente"]
 
-    Extract --> ReportResult["POST /api/report\nEnvia status (success/error)"]
+    Extract --> ReportResult["POST /api/report<br/>Envia status: success/error/rollback"]
     ReportResult --> Restart(["Próxima abertura: Nova versão ativa"])
 
     classDef success fill:#d4edda,stroke:#28a745,stroke-width:2px;
@@ -117,6 +117,8 @@ Acesse a rota `/dashboard` para monitoramento:
 - Controle de **Versão Atual** e **Versão Mínima** tolerada
 - Lista histórica de bundles publicados (tamanho e hash)
 - Logs de telemetria: taxa de adoção e rollbacks dos dispositivos conectados
+
+> **Nota:** Os relatórios são armazenados em memória (máx. 100 entradas) e se perdem ao reiniciar o servidor. Na Vercel, isso ocorre a cada novo deploy ou cold start.
 
 ---
 
