@@ -12,10 +12,10 @@ export default function DashboardPage() {
       {/* Header */}
       <div style={{ marginBottom: '32px' }}>
         <h1 style={{ fontSize: '28px', fontWeight: 700, margin: '0 0 8px 0', color: '#1a1a2e' }}>
-          OTA Dashboard
+          Painel OTA
         </h1>
         <p style={{ fontSize: '14px', color: '#666', margin: 0 }}>
-          Over-The-Air update server management
+          Gerenciamento de atualizações Over-The-Air
         </p>
       </div>
 
@@ -30,7 +30,7 @@ export default function DashboardPage() {
           border: '1px solid #e8e8e8',
         }}>
           <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', color: '#888', letterSpacing: '0.5px', marginBottom: '8px' }}>
-            Current Version
+            Versão Atual
           </div>
           <div style={{
             display: 'inline-block',
@@ -54,7 +54,7 @@ export default function DashboardPage() {
           border: '1px solid #e8e8e8',
         }}>
           <div style={{ fontSize: '12px', fontWeight: 600, textTransform: 'uppercase', color: '#888', letterSpacing: '0.5px', marginBottom: '8px' }}>
-            Minimum Version
+            Versão Mínima
           </div>
           <div style={{
             display: 'inline-block',
